@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script type="text/javascript" src="../assets/js/vue.js"></script>
-    <title>Extends Optin Demo</title>
-</head>
-<body>
-    <h1>Extends Optin Demo</h1>
-    <hr>
-    <div id="app">
-        {{message}}
-        <p><button @click="add">add</button></p>
-    </div>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../assets/js/vue.js"></script>
+		<title>Extends Optin Demo</title>
+	</head>
 
-    <script type="text/javascript">
-        var bbb={
-            created:function(){
-                console.log("我是被扩展出来的");
-            },
-            methods:{
-                add:function(){
-                    console.log('我是被扩展出来的方法！');
-                }
-            }
-        };
-        var app=new Vue({
-            el:'#app',
-            data:{
-                message:'hello Vue!'
-            },
-            methods:{
-                add:function(){
-                    console.log('我是原生方法');
-                }
-            },
-            extends:bbb,
-            delimiters:['${','}']
-        })
-    </script>
-</body>
+	<body>
+		<div id="author"></div>
+		<script type="text/javascript">
+			var author = Vue.extend({
+				template: "<p><a :href='url'>{{author}} & {{name}}</a></p>",
+				data: function() {
+					return {
+						author: 'vamous',
+						url: 'https://github.com/object-summer/VueDome/blob/master/README.md'
+					}
+				},
+				props: ['name']
+			});
+			new author({
+				propsData: {
+					name: 'dear_mr'
+				}
+			}).$mount('#author');
+		</script>
+	</body>
 </html>
