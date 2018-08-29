@@ -1,5 +1,5 @@
 # VueDome vue 2.0实例（VueDome，再次梳理）
-一、Vue全局AIP
+#### Vue全局AIP
   1.Vue.directive 自定义指令
   	注册或获取全局指令。
   2.Vue.extend 构造器延伸
@@ -9,7 +9,7 @@
   	向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性 	   (比如 this.myObject.newProperty = 'hi')
   4.Vue.extend()构造器
   	用法：使用Vue构造器，创建一个“子类”，参数是一个包含组件选项的对象，其中,data选项中必须是函数
- vue单文件方式 xxx.vue
+ #### vue单文件方式 xxx.vue
  1:准备好配置文件 package.json(包描述文件&& 封装命令npm run dev) + webpack.config.js文件（打包的配置文件）
  2:创建index.html（单页应用的页）
  3:创建main.js(入口文件) 
@@ -37,7 +37,7 @@
     - 子传父: vuebus（只能是同一辆车）
         + 先停车到父组件，On一下
         + 再开车到子组件，如果需要的话，emit一下，触发上述时间的回调函数
-mint-ui组件库
+#### mint-ui组件库
  饿了么出品,element-ui 在PC端使用的
  移动端版本 mint-ui
  https://mint-ui.github.io/#!/zh-cn
@@ -45,3 +45,21 @@ mint-ui组件库
     - 如果是全部安装的方式
         + 1:在template中可以直接使用组件标签
         + 2:在script中必须要声明，也就是引入组件对象（按需加载）
+#### vue-router
+ 前端路由 核心就是锚点值的改变，根据不同的值，渲染指定DOM位置的不同数据
+ ui-router:锚点值改变，如何获取模板？ajax、
+ vue中，模板数据不是通过ajax请求来，而是调用函数获取到模板内容
+ 核心：锚点值改变
+ 以后看到vue开头，就知道必须Vue.use
+ vue的核心插件:
+    - vue-router 路由
+    - vuex 管理全局共享数据
+ 使用方式
+    - 1:下载 `npm i vue-router -S`
+    - 2:在main.js中引入 `import VueRouter from 'vue-router';`
+    - 3:安装插件 `Vue.use(VueRouter);`
+    - 4:创建路由对象并配置路由规则
+        + `let router = new VueRouter({ routes:[ {path:'/home',component:Home}  ]   });`
+    - 5:将其路由对象传递给Vue的实例，options中
+        + options中加入 `router:router`
+    - 6:在app.vue中留坑 ` <router-view></router-view>`
