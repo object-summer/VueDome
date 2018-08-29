@@ -37,3 +37,11 @@
     - 子传父: vuebus（只能是同一辆车）
         + 先停车到父组件，On一下
         + 再开车到子组件，如果需要的话，emit一下，触发上述时间的回调函数
+mint-ui组件库
+ 饿了么出品,element-ui 在PC端使用的
+ 移动端版本 mint-ui
+ https://mint-ui.github.io/#!/zh-cn
+ 注意:
+    - 如果是全部安装的方式
+        + 1:在template中可以直接使用组件标签
+        + 2:在script中必须要声明，也就是引入组件对象（按需加载）
