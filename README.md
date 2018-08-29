@@ -9,3 +9,10 @@
   	向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性 	   (比如 this.myObject.newProperty = 'hi')
   4.Vue.extend()构造器
   	用法：使用Vue构造器，创建一个“子类”，参数是一个包含组件选项的对象，其中,data选项中必须是函数
+ vue单文件方式 xxx.vue
+ 1:准备好配置文件 package.json(包描述文件&& 封装命令npm run dev) + webpack.config.js文件（打包的配置文件）
+ 2:创建index.html（单页应用的页）
+ 3:创建main.js(入口文件) 
+ 4:引入vue和相关的文件xxx.vue
+ 5:new Vue(options)
+
