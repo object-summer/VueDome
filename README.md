@@ -15,4 +15,25 @@
  3:创建main.js(入口文件) 
  4:引入vue和相关的文件xxx.vue
  5:new Vue(options)
-
+ 6:options（选项）: 
+    - data
+    - methods
+    - components（组件内声明子组件)
+    - props
+ 7:实例:
+    - 在组件内（xxx.vue）中的this
+    - new Vue()
+    - 事件
+        + this.$on(事件名,回调函数(参数))
+        + this.$emit(事件名,数据)
+        + this.$once(事件名,回调函数(参数)) 就触发一次
+        + this.$off(事件名); 取消事件
+ 8:全局
+    - Vue.component('组件名',组件对象)  在哪里都可以使用
+ 9: 组件传值
+    - 父传子: 属性作为参数
+        + 常量 title="xxx"   子组件声明接收参数 props:['xxx']
+        + 变量 :title="num"  子组件声明接收参数 props:['xxx']
+    - 子传父: vuebus（只能是同一辆车）
+        + 先停车到父组件，On一下
+        + 再开车到子组件，如果需要的话，emit一下，触发上述时间的回调函数
