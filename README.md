@@ -110,3 +110,9 @@
     - value 就是要显示的组件对象
 * 多个视图`<router-view></router-view>` -> name就是default
 * `<router-view name='xxx'></router-view>` -> name就是xxx
+### 嵌套路由
+* 用单页去实现多页应用，复杂的嵌套路由
+* 开发中一般会需要使用
+* 视图包含视图
+* 路由父子级关系路由
+
