@@ -101,4 +101,12 @@
     - 对应的事件
         + created 完成了数据的初始化，此时还未生成DOM，无法操作DOM
         + mounted 将数据已经装载到了DOM之上,可以操作DOM
-
+#### 多视图
+* 以前可以一次放一个坑对应一个路由和显示一个组件
+    - 一次行为 = 一个坑 + 一个路由 + 一个组件
+    - 一次行为 = 多个坑 + 一个路由 + 多个组件
+* components 多视图 是一个对象 对象内多个key和value
+    - key对应视图的name属性
+    - value 就是要显示的组件对象
+* 多个视图`<router-view></router-view>` -> name就是default
+* `<router-view name='xxx'></router-view>` -> name就是xxx
