@@ -120,3 +120,11 @@
 * 停止维护了，作者推荐使用axios
 * options预检请求，是当浏览器发现跨域 + application/json的请求，就会自动发起
 * 并且发起的时候携带了一个content-type的头
+#### axios
+* https://segmentfault.com/a/1190000008470355?utm_source=tuicool&utm_medium=referral
+* post请求的时候，如果数据是字符串 默认头就是键值对，否则是对象就是application/json
+* this.$axios.get(url,options)
+* this.$axios.post(url,data,options)
+* options:{ params:{id:1}//查询字符串, headers:{ 'content-type':'xxxxx' },baseURL:''  }
+* 全局默认设置 ：Axios.defaults.baseURL = 'xxxxx';
+* 针对当前这一次请求的相关设置
