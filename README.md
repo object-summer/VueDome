@@ -45,7 +45,7 @@
     - 如果是全部安装的方式
         + 1:在template中可以直接使用组件标签
         + 2:在script中必须要声明，也就是引入组件对象（按需加载）
-#### vue-router
+ #### vue-router
  前端路由 核心就是锚点值的改变，根据不同的值，渲染指定DOM位置的不同数据
  ui-router:锚点值改变，如何获取模板？ajax、
  vue中，模板数据不是通过ajax请求来，而是调用函数获取到模板内容
@@ -63,3 +63,10 @@
     - 5:将其路由对象传递给Vue的实例，options中
         + options中加入 `router:router`
     - 6:在app.vue中留坑 ` <router-view></router-view>`
+ #### 命名路由
+ 需求，通过a标签点击，做页面数据的跳转
+ 使用router-link标签
+    - 1:去哪里 `<router-link to="/beijing">去北京</router-link>`
+    - 2:去哪里 `<router-link :to="{name:'bj'}">去北京</router-link>`
+        + 更利于维护，如果修改了path，只修改路由配置中的path，该a标签会根据修改后的值生成href属性
+
