@@ -90,4 +90,15 @@
 * this.$router.push(直接跳转到某个页面显示)
     - push参数: 字符串 /xxx
     - 对象 :  `{name:'xxx',query:{id:1},params:{name:2}  }`
+#### 获取DOM元素
+* 救命稻草, 前端框架就是为了减少DOM操作，但是特定情况下，也给你留了后门
+* 在指定的元素上，添加ref="名称A"
+* 在获取的地方加入 this.$refs.名称A  
+    - 如果ref放在了原生DOM元素上，获取的数据就是原生DOM对象
+        + 可以直接操作
+    - 如果ref放在了组件对象上，获取的就是组件对象
+        + 1:获取到DOM对象,通过this.$refs.sub.$el,进行操作
+    - 对应的事件
+        + created 完成了数据的初始化，此时还未生成DOM，无法操作DOM
+        + mounted 将数据已经装载到了DOM之上,可以操作DOM
 
