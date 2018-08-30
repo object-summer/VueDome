@@ -69,4 +69,19 @@
     - 1:去哪里 `<router-link to="/beijing">去北京</router-link>`
     - 2:去哪里 `<router-link :to="{name:'bj'}">去北京</router-link>`
         + 更利于维护，如果修改了path，只修改路由配置中的path，该a标签会根据修改后的值生成href属性
+#### 参数router-link
+ 在vue-router中，有两大对象被挂载到了实例this
+ $route(只读、具备信息的对象)、$router(具备功能函数)
+ 查询字符串
+    - 1:去哪里 `<router-link :to="{name:'detail',query:{id:1}  } ">xxx</router-link>`
+    - 2:导航(查询字符串path不用改) `{ name:'detail' , path:'/detail',组件}`
+    - 3:去了干嘛,获取路由参数(要注意是query还是params和对应id名)
+        + `this.$route.query.id`
+ path方式
+    - 1:去哪里 `<router-link :to="{name:'detail',params:{name:1}  } ">xxx</router-link>`
+    - 2:导航(path方式需要在路由规则上加上/:xxx) 
+    - `{ name:'detail' , path:'/detail/:name',组件}`
+    - 3:去了干嘛,获取路由参数(要注意是query还是params和对应name名)
+        + `this.$route.params.name`
+
 
